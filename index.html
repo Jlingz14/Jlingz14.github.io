@@ -84,39 +84,64 @@
       position: relative;
     }
 
-    /* Photo de profil - Taille augmentée */
+    /* Photo de profil - Taille augmentée et forme améliorée */
     .profile-pic {
-      width: 220px;
-      height: 220px;
-      max-width: 85%;
+      width: 280px;
+      height: 280px;
       object-fit: cover;
       border-radius: 50%;
-      border: 6px solid var(--accent-color);
+      border: 8px solid var(--accent-color);
       margin-bottom: 25px;
-      box-shadow: 0 0 30px rgba(74, 134, 232, 0.4);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      box-shadow: 0 15px 35px rgba(74, 134, 232, 0.3);
+      transition: all 0.5s ease;
+      display: block;
     }
     
     .profile-pic:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 40px rgba(74, 134, 232, 0.6);
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(74, 134, 232, 0.4);
     }
 
     /* Cadre pour la photo */
+    .profile-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
     .profile-frame {
       display: inline-block;
       border-radius: 50%;
-      padding: 8px;
+      padding: 12px;
       background: linear-gradient(135deg, var(--accent-color), var(--light-accent));
-      box-shadow: 0 8px 25px rgba(74, 134, 232, 0.3);
-      margin-bottom: 20px;
-      animation: pulse 3s infinite ease-in-out;
+      box-shadow: 0 15px 35px rgba(74, 134, 232, 0.25);
+      animation: pulse 4s infinite ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .profile-frame::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shine 6s infinite linear;
     }
     
     @keyframes pulse {
-      0% { box-shadow: 0 8px 25px rgba(74, 134, 232, 0.3); }
-      50% { box-shadow: 0 8px 30px rgba(74, 134, 232, 0.5); }
-      100% { box-shadow: 0 8px 25px rgba(74, 134, 232, 0.3); }
+      0% { transform: scale(1); box-shadow: 0 15px 35px rgba(74, 134, 232, 0.25); }
+      50% { transform: scale(1.02); box-shadow: 0 20px 40px rgba(74, 134, 232, 0.35); }
+      100% { transform: scale(1); box-shadow: 0 15px 35px rgba(74, 134, 232, 0.25); }
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
     }
 
     /* Liens */
@@ -310,8 +335,8 @@
       }
       
       .profile-pic {
-        width: 200px;
-        height: 200px;
+        width: 240px;
+        height: 240px;
       }
       
       h2::after {
@@ -334,8 +359,9 @@
     
     @media (max-width: 576px) {
       .profile-pic {
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
+        border-width: 6px;
       }
       
       .card {
@@ -344,6 +370,10 @@
       
       h2 {
         font-size: 1.6rem;
+      }
+      
+      .profile-frame {
+        padding: 8px;
       }
     }
   </style>
@@ -375,8 +405,10 @@
   <!-- Contenu principal -->
   <div class="content container py-4">
     <header class="text-center mb-5 animate">
-      <div class="profile-frame">
-        <img src="profile.jpg" alt="Photo de profil de Stefana Tabera Tsilefa" class="profile-pic">
+      <div class="profile-container">
+        <div class="profile-frame">
+          <img src="profile.jpg" alt="Photo de profil de Stefana Tabera Tsilefa" class="profile-pic">
+        </div>
       </div>
       <h1 class="fw-bold">Stefana Fandresena Tabera Tsilefa</h1>
       <p class="lead">Doctorant en Mathématiques Appliquées et Computationnelles</p>
@@ -385,14 +417,13 @@
         <a href="tel:+261347050361" class="me-3"><i class="fas fa-phone me-1"></i> +261 34 70 50 361</a>
       </p>
       <p><i class="fas fa-birthday-cake me-1"></i> <strong>Né le :</strong> 16 Mai 1998, Fianarantsoa (Madagascar)</p>
-      <a href="#" class="btn btn-custom mt-3"><i class="fas fa-download me-1"></i> Télécharger le CV</a>
     </header>
 
     <section id="about" class="card animate">
       <h2><i class="fas fa-user me-2"></i>À propos de moi</h2>
       <p>
         Je suis actuellement doctorant en <strong>mathématiques appliquées et computationnelles</strong>. 
-        Mon domaine de recherche concerne l’<strong>analyse</strong> et le <strong>machine learning appliqués aux équations stochastiques</strong>, 
+        Mon domaine de recherche concerne l’<strong>analyse</strong> and le <strong>machine learning appliqués aux équations stochastiques</strong>, 
         ainsi que la <strong>modélisation appliquée</strong>. 
         Passionné par l’interaction entre théorie mathématique et applications réelles, 
         je m’investis dans des projets qui relient 
@@ -556,6 +587,7 @@
         <a href="#" title="ResearchGate"><i class="fab fa-researchgate fa-lg"></i></a>
       </div>
       © Copyright 2025 Stefana Tabera Tsilefa. 
+      Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with al-folio theme. 
       Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. 
       Last updated: September 06, 2025.
     </footer>
@@ -659,4 +691,3 @@
   </script>
 </body>
 </html>
-
