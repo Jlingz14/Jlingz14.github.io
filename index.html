@@ -6,29 +6,82 @@
   <title>CV - Stefana Tabera Tsilefa</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
-    /* Couleurs et typographie */
-    body {
-      background: #1a0d0d;
-      color: #f0f0f0;
-      font-family: Arial, sans-serif;
+    :root {
+      --primary-bg: #f0f8ff;
+      --secondary-bg: #ffffff;
+      --accent-color: #4a86e8;
+      --light-accent: #6aa0e8;
+      --dark-accent: #3a66b5;
+      --text-color: #333333;
+      --muted-text: #6c757d;
+      --border-color: #d1e2ff;
+      --card-shadow: rgba(74, 134, 232, 0.15);
     }
-    h1, h2 {
-      color: #ff6666;
+    
+    body {
+      background: var(--primary-bg);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--accent-color);
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    
+    h2 {
+      position: relative;
+      padding-bottom: 12px;
+      margin-bottom: 25px;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 2px;
+      transition: background 0.3s ease;
     }
 
     /* Cartes */
     .card {
-      background: #2b0d0d;
-      border: none;
-      border-radius: 8px;
-      padding: 20px;
+      background: var(--secondary-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
       margin-bottom: 30px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-      color: #f0f0f0;
+      box-shadow: 0 6px 15px var(--card-shadow);
+      color: var(--text-color);
+      transition: all 0.3s ease;
     }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(74, 134, 232, 0.2);
+    }
+    
     .card p, .card ul {
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+    
+    .card ul {
+      padding-left: 20px;
+    }
+    
+    .card li {
+      margin-bottom: 10px;
+      position: relative;
     }
 
     /* Photo de profil */
@@ -38,49 +91,241 @@
       max-width: 80%;
       object-fit: cover;
       border-radius: 50%;
-      border: 5px solid #ff6666;
-      margin-bottom: 20px;
-      box-shadow: 0 0 20px rgba(255,102,102,0.6);
+      border: 5px solid var(--accent-color);
+      margin-bottom: 25px;
+      box-shadow: 0 0 25px rgba(74, 134, 232, 0.3);
+      transition: transform 0.5s ease;
+    }
+    
+    .profile-pic:hover {
+      transform: scale(1.05);
     }
 
     /* Liens */
     a {
-      color: #ff6666;
+      color: var(--accent-color);
       text-decoration: none;
+      transition: color 0.3s ease;
     }
+    
     a:hover {
-      color: #ff9999;
+      color: var(--dark-accent);
+    }
+
+    /* Barre de navigation */
+    .navbar {
+      background-color: var(--secondary-bg) !important;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link {
+      color: var(--text-color) !important;
+      padding: 8px 16px;
+      margin: 0 5px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      background: rgba(74, 134, 232, 0.1);
+      color: var(--accent-color) !important;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--accent-color) !important;
+      font-size: 1.4rem;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 30px;
+      margin-top: 50px;
       font-size: 0.9em;
-      color: #bbb;
-      border-top: 1px solid #660000;
+      color: var(--muted-text);
+      border-top: 1px solid var(--border-color);
+      background: var(--secondary-bg);
+      border-radius: 12px;
+      transition: all 0.3s ease;
     }
+    
     footer a {
       display: inline-block;
-      margin: 0 5px;
+      margin: 0 10px;
+      font-size: 1.3em;
+      transition: transform 0.3s ease;
+    }
+    
+    footer a:hover {
+      transform: translateY(-3px);
     }
 
     /* Contenu principal */
     .content {
       margin: 0;
-      padding-top: 20px;
+      padding-top: 40px;
+    }
+    
+    /* Section compétences */
+    .skill-bar {
+      background: rgba(74, 134, 232, 0.1);
+      height: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      height: 100%;
+      background: var(--accent-color);
+      border-radius: 5px;
+      position: relative;
+      width: 0;
+      transition: width 1s ease-in-out;
+    }
+    
+    .skill-item {
+      margin-bottom: 25px;
+    }
+    
+    /* Badges */
+    .badge-custom {
+      background: rgba(74, 134, 232, 0.15);
+      color: var(--accent-color);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      display: inline-block;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    /* Boutons */
+    .btn-custom {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(74, 134, 232, 0.3);
+    }
+    
+    .btn-custom:hover {
+      background: var(--dark-accent);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(74, 134, 232, 0.4);
+    }
+    
+    /* Mode jour/nuit */
+    .theme-switch {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1000;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: none;
+      transition: all 0.3s ease;
+    }
+    
+    .theme-switch:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Textes en mode sombre */
+    body.dark-mode {
+      --primary-bg: #1a1f36;
+      --secondary-bg: #242b45;
+      --text-color: #f0f0f0;
+      --muted-text: #a0a7c0;
+      --border-color: #2a3250;
+      --card-shadow: rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Correction pour les textes en mode sombre */
+    body.dark-mode .text-muted {
+      color: #a0a7c0 !important;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate {
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+
+    /* Ajustement pour la navigation */
+    html {
+      scroll-padding-top: 80px;
     }
 
     /* Mobile adjustments */
     @media (max-width: 991px) {
       .card {
-        padding: 15px;
-        margin-bottom: 20px;
+        padding: 25px;
+        margin-bottom: 25px;
       }
+      
       .profile-pic {
-        max-width: 80%;
-        height: auto;
+        width: 180px;
+        height: 180px;
+      }
+      
+      h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .navbar-nav {
+        text-align: center;
+        background: var(--secondary-bg);
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      html {
+        scroll-padding-top: 70px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .profile-pic {
+        width: 160px;
+        height: 160px;
+      }
+      
+      .card {
+        padding: 20px;
+      }
+      
+      h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
@@ -88,18 +333,22 @@
 <body>
 
   <!-- Barre de navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#330000;">
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#">Mon CV</a>
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="fas fa-user-graduate me-2"></i>Mon CV
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#formation">Formation</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Expériences</a></li>
-          <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#about"><i class="fas fa-user me-1"></i> À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#formation"><i class="fas fa-graduation-cap me-1"></i> Formation</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience"><i class="fas fa-briefcase me-1"></i> Expériences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#publications"><i class="fas fa-book me-1"></i> Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#competences"><i class="fas fa-tools me-1"></i> Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#langues"><i class="fas fa-language me-1"></i> Langues</a></li>
         </ul>
       </div>
     </div>
@@ -107,16 +356,20 @@
 
   <!-- Contenu principal -->
   <div class="content container py-4">
-    <header class="text-center mb-5">
-      <img src="profile.jpg" alt="Photo de profil" class="profile-pic">
+    <header class="text-center mb-5 animate">
+      <img src="https://placehold.co/200x200/4a86e8/FFFFFF?text=ST" alt="Photo de profil" class="profile-pic">
       <h1 class="fw-bold">Stefana Fandresena Tabera Tsilefa</h1>
-      <p><strong>Email :</strong> <a href="mailto:tsilefastefana@gmail.com">tsilefastefana@gmail.com</a> | 
-         <strong>Téléphone :</strong> +261 34 70 50 361</p>
-      <p><strong>Né le :</strong> 16 Mai 1998, Fianarantsoa (Madagascar)</p>
+      <p class="lead">Doctorant en Mathématiques Appliquées et Computationnelles</p>
+      <p>
+        <a href="mailto:tsilefastefana@gmail.com" class="me-3"><i class="fas fa-envelope me-1"></i> tsilefastefana@gmail.com</a> | 
+        <a href="tel:+261347050361" class="me-3"><i class="fas fa-phone me-1"></i> +261 34 70 50 361</a>
+      </p>
+      <p><i class="fas fa-birthday-cake me-1"></i> <strong>Né le :</strong> 16 Mai 1998, Fianarantsoa (Madagascar)</p>
+      <a href="#" class="btn btn-custom mt-3"><i class="fas fa-download me-1"></i> Télécharger le CV</a>
     </header>
 
-    <section id="about" class="card">
-      <h2>À propos de moi</h2>
+    <section id="about" class="card animate">
+      <h2><i class="fas fa-user me-2"></i>À propos de moi</h2>
       <p>
         Je suis actuellement doctorant en <strong>mathématiques appliquées et computationnelles</strong>. 
         Mon domaine de recherche concerne l’<strong>analyse</strong> et le <strong>machine learning appliqués aux équations stochastiques</strong>, 
@@ -127,45 +380,161 @@
       </p>
     </section>
 
-    <section id="formation" class="card">
-      <h2>Formation</h2>
+    <section id="formation" class="card animate delay-1">
+      <h2><i class="fas fa-graduation-cap me-2"></i>Formation</h2>
       <ul>
-        <li><strong>2024 - ...</strong> Doctorant en Mathématiques, Université de Poitiers & Fianarantsoa</li>
-        <li><strong>2022 - 2023</strong> Master Recherche en Didactique des Mathématiques (Major de promotion)</li>
+        <li>
+          <strong>2024 - ...</strong> Doctorant en Mathématiques, Université de Poitiers & Fianarantsoa
+          <br><span class="text-muted">Spécialité: Mathématiques appliquées et computationnelles</span>
+        </li>
+        <li>
+          <strong>2022 - 2023</strong> Master Recherche en Didactique des Mathématiques
+          <span class="badge-custom">Major de promotion</span>
+        </li>
         <li><strong>2020</strong> Master d’Aptitude Pédagogique en Mathématiques</li>
         <li><strong>2017</strong> Licence d’Aptitude Pédagogique en Mathématiques</li>
       </ul>
     </section>
 
-    <section id="experience" class="card">
-      <h2>Expériences</h2>
+    <section id="experience" class="card animate delay-1">
+      <h2><i class="fas fa-briefcase me-2"></i>Expériences professionnelles</h2>
       <ul>
-        <li><strong>2025 - ...</strong> Responsable parcours Licence Mathématiques, ENS Fianarantsoa</li>
-        <li><strong>2022 - ...</strong> Enseignant vacataire (Algo, Probabilités, Analyse fonctionnelle)</li>
-        <li><strong>2021 - ...</strong> Organisateur Animath Madagascar</li>
+        <li>
+          <strong>2025 - ...</strong> Responsable parcours Licence Mathématiques, ENS Fianarantsoa
+          <br><span class="text-muted">Gestion du programme pédagogique et encadrement des étudiants</span>
+        </li>
+        <li>
+          <strong>2022 - ...</strong> Enseignant vacataire
+          <br><span class="text-muted">Cours d'algorithmique, probabilités et analyse fonctionnelle</span>
+        </li>
+        <li>
+          <strong>2021 - ...</strong> Organisateur Animath Madagascar
+          <br><span class="text-muted">Coordination d'événements mathématiques et promotion des sciences</span>
+        </li>
       </ul>
     </section>
 
-    <section id="publications" class="card">
-      <h2>Publications</h2>
+    <section id="publications" class="card animate delay-2">
+      <h2><i class="fas fa-book me-2"></i>Publications</h2>
       <ul>
-        <li><strong>2025</strong> – Bayesian inference of semi-Markovian model (PLOS ONE)</li>
-        <li><strong>2024</strong> – Spatial Markov matrices (BMC Public Health)</li>
-        <li><strong>2021</strong> – Probabilistic Modelling of COVID-19 (OJMS)</li>
+        <li>
+          <strong>2025</strong> – Bayesian inference of semi-Markovian model 
+          <br><span class="text-muted">PLOS ONE</span>
+          <a href="#" class="ms-2"><i class="fas fa-external-link-alt"></i></a>
+        </li>
+        <li>
+          <strong>2024</strong> – Spatial Markov matrices 
+          <br><span class="text-muted">BMC Public Health</span>
+          <a href="#" class="ms-2"><i class="fas fa-external-link-alt"></i></a>
+        </li>
+        <li>
+          <strong>2021</strong> – Probabilistic Modelling of COVID-19 
+          <br><span class="text-muted">OJMS</span>
+          <a href="#" class="ms-2"><i class="fas fa-external-link-alt"></i></a>
+        </li>
       </ul>
     </section>
 
-    <section id="competences" class="card">
-      <h2>Compétences</h2>
-      <ul>
-        <li>Mathématiques appliquées, probabilités, statistiques</li>
-        <li>Deep Learning, équations différentielles stochastiques</li>
-        <li>Algorithmique et programmation</li>
-        <li>Enseignement et encadrement</li>
-      </ul>
+    <section id="competences" class="card animate delay-2">
+      <h2><i class="fas fa-tools me-2"></i>Compétences</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Mathématiques</h5>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between">
+              <span>Probabilités & Statistiques</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between">
+              <span>Équations différentielles stochastiques</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between">
+              <span>Analyse fonctionnelle</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5>Techniques</h5>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between">
+              <span>Machine Learning</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="75%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between">
+              <span>Algorithmique</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between">
+              <span>Modélisation appliquée</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer>
+    <section id="langues" class="card animate delay-3">
+      <h2><i class="fas fa-language me-2"></i>Langues</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Malagasy</h5>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="100%"></div>
+          </div>
+          <small class="text-muted">Langue maternelle</small>
+        </div>
+        <div class="col-md-4">
+          <h5>Français</h5>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="90%"></div>
+          </div>
+          <small class="text-muted">Courant</small>
+        </div>
+        <div class="col-md-4">
+          <h5>Anglais</h5>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="75%"></div>
+          </div>
+          <small class="text-muted">Intermédiaire</small>
+        </div>
+      </div>
+    </section>
+
+    <footer class="animate delay-3">
+      <div class="mb-3">
+        <a href="mailto:tsilefastefana@gmail.com" title="Email"><i class="fas fa-envelope fa-lg"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+        <a href="#" title="GitHub"><i class="fab fa-github fa-lg"></i></a>
+        <a href="#" title="ResearchGate"><i class="fab fa-researchgate fa-lg"></i></a>
+      </div>
       © Copyright 2025 Stefana Tabera Tsilefa. 
       Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with al-folio theme. 
       Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. 
@@ -173,7 +542,101 @@
     </footer>
   </div>
 
+  <!-- Bouton changement de thème -->
+  <div class="theme-switch">
+    <i class="fas fa-moon"></i>
+  </div>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Animation des barres de compétences
+    document.addEventListener('DOMContentLoaded', function() {
+      const skillBars = document.querySelectorAll('.skill-progress');
+      
+      // Observer pour déclencher l'animation lorsque l'élément est visible
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const width = entry.target.getAttribute('data-width');
+            entry.target.style.width = width;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      skillBars.forEach(bar => {
+        observer.observe(bar);
+      });
+      
+      // Navigation active
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          
+          if (pageYOffset >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+      
+      // Changement de thème
+      const themeSwitch = document.querySelector('.theme-switch');
+      themeSwitch.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+          themeSwitch.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+          themeSwitch.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+      });
+
+      // Fermer le menu de navigation après un clic sur mobile
+      const navLinksList = document.querySelectorAll('.nav-link');
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      
+      navLinksList.forEach(link => {
+        link.addEventListener('click', (e) => {
+          // Vérifier si le menu est actuellement ouvert (sur mobile)
+          if (navbarCollapse.classList.contains('show')) {
+            // Simuler un clic sur le bouton pour fermer le menu
+            navbarToggler.click();
+          }
+          
+          // Scroll vers la section avec ajustement pour la navbar fixe
+          const targetId = link.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            e.preventDefault();
+            const offsetTop = targetSection.offsetTop - 10; // Ajustement pour la navbar fixe
+            
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+            
+            // Mettre à jour l'URL
+            history.pushState(null, null, '#' + targetId);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
