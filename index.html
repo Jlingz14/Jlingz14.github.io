@@ -66,43 +66,14 @@
       margin: 0 5px;
     }
 
-    /* Sidebar desktop */
-    @media (min-width: 992px) {
-      .sidebar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 220px;
-        background: #330000;
-        padding-top: 100px;
-        box-shadow: -2px 0 6px rgba(0,0,0,0.6);
-      }
-      .sidebar a {
-        display: block;
-        padding: 12px 20px;
-        color: #f0f0f0;
-        text-decoration: none;
-        transition: background 0.3s, padding-left 0.3s;
-      }
-      .sidebar a:hover {
-        background: #660000;
-        padding-left: 28px;
-      }
-      .content {
-        margin-right: 240px;
-      }
+    /* Contenu principal */
+    .content {
+      margin: 0;
+      padding-top: 20px;
     }
 
-    /* Navbar mobile */
+    /* Mobile adjustments */
     @media (max-width: 991px) {
-      .sidebar {
-        display: none;
-      }
-      .content {
-        margin: 0;
-        padding-top: 70px; /* espace pour navbar fixe */
-      }
       .card {
         padding: 15px;
         margin-bottom: 20px;
@@ -116,7 +87,7 @@
 </head>
 <body>
 
-  <!-- Barre de navigation mobile -->
+  <!-- Barre de navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#330000;">
     <div class="container-fluid">
       <a class="navbar-brand fw-bold" href="#">Mon CV</a>
@@ -133,14 +104,6 @@
       </div>
     </div>
   </nav>
-
-  <!-- Sidebar pour grand écran -->
-  <div class="sidebar d-none d-lg-block">
-    <a href="#formation">Formation</a>
-    <a href="#experience">Expériences</a>
-    <a href="#publications">Publications</a>
-    <a href="#competences">Compétences</a>
-  </div>
 
   <!-- Contenu principal -->
   <div class="content container py-4">
