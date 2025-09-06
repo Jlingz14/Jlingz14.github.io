@@ -84,21 +84,39 @@
       position: relative;
     }
 
-    /* Photo de profil */
+    /* Photo de profil - Taille augmentée */
     .profile-pic {
-      width: 200px;
-      height: 200px;
-      max-width: 80%;
+      width: 220px;
+      height: 220px;
+      max-width: 85%;
       object-fit: cover;
       border-radius: 50%;
-      border: 5px solid var(--accent-color);
+      border: 6px solid var(--accent-color);
       margin-bottom: 25px;
-      box-shadow: 0 0 25px rgba(74, 134, 232, 0.3);
-      transition: transform 0.5s ease;
+      box-shadow: 0 0 30px rgba(74, 134, 232, 0.4);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
     
     .profile-pic:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 0 40px rgba(74, 134, 232, 0.6);
+    }
+
+    /* Cadre pour la photo */
+    .profile-frame {
+      display: inline-block;
+      border-radius: 50%;
+      padding: 8px;
+      background: linear-gradient(135deg, var(--accent-color), var(--light-accent));
+      box-shadow: 0 8px 25px rgba(74, 134, 232, 0.3);
+      margin-bottom: 20px;
+      animation: pulse 3s infinite ease-in-out;
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 8px 25px rgba(74, 134, 232, 0.3); }
+      50% { box-shadow: 0 8px 30px rgba(74, 134, 232, 0.5); }
+      100% { box-shadow: 0 8px 25px rgba(74, 134, 232, 0.3); }
     }
 
     /* Liens */
@@ -292,8 +310,8 @@
       }
       
       .profile-pic {
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
       }
       
       h2::after {
@@ -316,8 +334,8 @@
     
     @media (max-width: 576px) {
       .profile-pic {
-        width: 160px;
-        height: 160px;
+        width: 180px;
+        height: 180px;
       }
       
       .card {
@@ -357,7 +375,9 @@
   <!-- Contenu principal -->
   <div class="content container py-4">
     <header class="text-center mb-5 animate">
-      <img src="https://placehold.co/200x200/4a86e8/FFFFFF?text=ST" alt="Photo de profil" class="profile-pic">
+      <div class="profile-frame">
+        <img src="profile.jpg" alt="Photo de profil de Stefana Tabera Tsilefa" class="profile-pic">
+      </div>
       <h1 class="fw-bold">Stefana Fandresena Tabera Tsilefa</h1>
       <p class="lead">Doctorant en Mathématiques Appliquées et Computationnelles</p>
       <p>
@@ -624,7 +644,7 @@
           const targetSection = document.getElementById(targetId);
           if (targetSection) {
             e.preventDefault();
-            const offsetTop = targetSection.offsetTop - 10; // Ajustement pour la navbar fixe
+            const offsetTop = targetSection.offsetTop - 80; // Ajustement pour la navbar fixe
             
             window.scrollTo({
               top: offsetTop,
