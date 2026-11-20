@@ -1,877 +1,320 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Stefana Fandresena Tabera Tsilefa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-    :root {
-      --bg: #f6f8fc;
-      --surface: #ffffff;
-      --surface-soft: #f9fbff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --primary: #1e3a8a;
-      --primary-soft: #dbe7ff;
-      --border: #e5e7eb;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
-      --shadow-soft: 0 4px 12px rgba(15, 23, 42, 0.05);
-      --radius: 18px;
-    }
-
-    body.dark-mode {
-      --bg: #0f172a;
-      --surface: #111827;
-      --surface-soft: #172033;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --primary: #93c5fd;
-      --primary-soft: rgba(147, 197, 253, 0.12);
-      --border: #243041;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
-      --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.22);
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      margin: 0;
-      background: linear-gradient(180deg, #eef3fb 0%, var(--bg) 240px);
-      color: var(--text);
-      font-family: Inter, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.7;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    body.dark-mode {
-      background: linear-gradient(180deg, #0b1222 0%, var(--bg) 260px);
-    }
-
-    .navbar {
-      backdrop-filter: blur(14px);
-      background: rgba(255, 255, 255, 0.82) !important;
-      border-bottom: 1px solid rgba(229, 231, 235, 0.9);
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
-    }
-
-    body.dark-mode .navbar {
-      background: rgba(17, 24, 39, 0.85) !important;
-      border-bottom-color: rgba(36, 48, 65, 0.95);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
-    }
-
-    .navbar-brand {
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--primary) !important;
-      font-size: 1.2rem;
-    }
-
-    .nav-link {
-      color: var(--muted) !important;
-      font-weight: 600;
-      border-radius: 999px;
-      padding: 0.55rem 1rem !important;
-      transition: all 0.25s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-      color: var(--primary) !important;
-      background: var(--primary-soft);
-    }
-
-    .page-shell {
-      padding: 34px 0 60px;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(248,250,252,0.95));
-      border: 1px solid rgba(255,255,255,0.7);
-      box-shadow: var(--shadow);
-      border-radius: 30px;
-      overflow: hidden;
-      position: relative;
-      margin-bottom: 30px;
-    }
-
-    body.dark-mode .hero {
-      background: linear-gradient(135deg, rgba(17,24,39,0.96), rgba(22,32,51,0.95));
-      border-color: rgba(36, 48, 65, 0.95);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(30, 58, 138, 0.14), transparent 30%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      padding: 42px;
-    }
-
-    .profile-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .profile-pic {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 24px;
-      border: 6px solid rgba(255, 255, 255, 0.85);
-      box-shadow: 0 20px 45px rgba(30, 58, 138, 0.16);
-      background: #fff;
-    }
-
-    body.dark-mode .profile-pic {
-      border-color: rgba(36, 48, 65, 0.95);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-weight: 700;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.92rem;
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-weight: 800;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.92rem;
-      margin-bottom: 12px;
-    }
-
-    .subtitle {
-      font-size: 1.15rem;
-      color: var(--muted);
-      margin-bottom: 18px;
-      font-weight: 500;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .info-chip {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      background: var(--surface-soft);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      color: var(--text);
-      text-decoration: none;
-      box-shadow: var(--shadow-soft);
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-
-    .info-chip i {
-      width: 16px;
-      color: var(--primary);
-      text-align: center;
-      flex-shrink: 0;
-    }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .hero-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 0.92rem;
-    }
-
-    .layout {
-      display: block;
-    }
-
-    .panel,
-    .section-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .panel {
-      padding: 28px;
-      margin-bottom: 22px;
-      position: static;
-    }
-
-    .section-card {
-      padding: 28px;
-      margin-bottom: 22px;
-    }
-
-    h2 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    h2 i,
-    h3 i {
-      color: var(--primary);
-    }
-
-    h3 {
-      font-size: 1.05rem;
-      font-weight: 800;
-      margin-bottom: 14px;
-      color: var(--text);
-    }
-
-    .about-text {
-      color: var(--text);
-      font-size: 1.02rem;
-      margin-bottom: 0;
-    }
-
-    .skill-group + .skill-group {
-      margin-top: 24px;
-    }
-
-    .skill-row {
-      margin-bottom: 16px;
-    }
-
-    .skill-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-    }
-
-    .skill-bar {
-      height: 10px;
-      border-radius: 999px;
-      background: #eaf0fb;
-      overflow: hidden;
-    }
-
-    body.dark-mode .skill-bar {
-      background: #21304a;
-    }
-
-    .skill-progress {
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--primary), #5b8def);
-      width: 0;
-      transition: width 1.1s ease;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 24px;
-      margin: 0;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 6px;
-      top: 6px;
-      bottom: 6px;
-      width: 2px;
-      background: linear-gradient(180deg, var(--primary-soft), rgba(30, 58, 138, 0.35));
-    }
-
-    .timeline-item {
-      position: relative;
-      list-style: none;
-      padding: 0 0 24px 18px;
-    }
-
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -23px;
-      top: 8px;
-      width: 12px;
-      height: 12px;
-      background: var(--surface);
-      border: 3px solid var(--primary);
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px var(--primary-soft);
-    }
-
-    .timeline-date {
-      display: inline-block;
-      font-weight: 700;
-      color: var(--primary);
-      background: var(--primary-soft);
-      border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 0.86rem;
-      margin-bottom: 8px;
-    }
-
-    .timeline-title {
-      font-weight: 800;
-      margin-bottom: 4px;
-      color: var(--text);
-    }
-
-    .timeline-subtitle {
-      color: var(--muted);
-      margin-bottom: 6px;
-      font-size: 0.95rem;
-    }
-
-    .timeline-text {
-      color: var(--text);
-      font-size: 0.97rem;
-      margin-bottom: 0;
-    }
-
-    .badge-custom {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      margin-left: 8px;
-    }
-
-    .publication-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .publication-item {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px 18px 16px;
-      background: linear-gradient(180deg, var(--surface), var(--surface-soft));
-    }
-
-    .publication-year {
-      display: inline-block;
-      font-size: 0.82rem;
-      font-weight: 800;
-      color: var(--primary);
-      background: var(--primary-soft);
-      border-radius: 999px;
-      padding: 4px 10px;
-      margin-bottom: 10px;
-    }
-
-    .publication-title {
-      font-weight: 800;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
-
-    .publication-source {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 0;
-    }
-
-    .publication-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 10px;
-      font-weight: 700;
-    }
-
-    .language-box {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
-      background: var(--surface-soft);
-      height: 100%;
-    }
-
-    .language-box h5 {
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .small-muted {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #163172;
-    }
-
-    body.dark-mode a:hover {
-      color: #bfdbfe;
-    }
-
-    footer {
-      margin-top: 16px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.92rem;
-      padding: 24px 16px 0;
-    }
-
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 14px;
-    }
-
-    .socials a {
-      width: 42px;
-      height: 42px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .theme-switch {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 1000;
-      width: 54px;
-      height: 54px;
-      border: none;
-      border-radius: 50%;
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 14px 30px rgba(30, 58, 138, 0.28);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      transition: transform 0.2s ease;
-    }
-
-    .theme-switch:hover {
-      transform: translateY(-2px) scale(1.03);
-    }
-
-    @media (max-width: 991px) {
-      .hero-content {
-        padding: 28px;
-      }
-
-      .profile-pic {
-        width: 180px;
-        height: 180px;
-        margin-bottom: 20px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero-content,
-      .panel,
-      .section-card {
-        padding: 20px;
-      }
-
-      .timeline {
-        padding-left: 18px;
-      }
-
-      .timeline-item {
-        padding-left: 14px;
-      }
-
-      .timeline-item::before {
-        left: -17px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stefana Tabera-Tsilefa · Doctorant en mathématiques appliquées</title>
+<meta name="description" content="Doctorant en mathématiques (Poitiers / Fianarantsoa). Équations différentielles stochastiques α-stables, deep learning, modélisation épidémiologique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f6f7; --surface:#ffffff; --ink:#15222c; --muted:#5b6b76;
+  --accent:#0d6b6e; --accent-soft:#dcefee; --line:#dbe2e6;
+  --serif:"Newsreader",Georgia,serif; --sans:"IBM Plex Sans",system-ui,sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#0e171d; --surface:#142029; --ink:#e6edf1; --muted:#98a9b4;
+  --accent:#6cc9c9; --accent-soft:rgba(108,201,201,.13); --line:#233440;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+
+/* navigation */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;flex-wrap:wrap}
+nav b{font-family:var(--serif);font-size:1.1rem}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav li a{display:block;padding:6px 12px;border-radius:8px;color:var(--muted);font-size:.93rem;font-weight:500}
+nav li a:hover,nav li a.on{background:var(--accent-soft);color:var(--accent);text-decoration:none}
+#theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:6px 12px;font:inherit;font-size:.88rem;cursor:pointer}
+
+/* hero */
+.hero{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;padding:56px 0 40px}
+.hero img{width:200px;height:200px;object-fit:cover;border-radius:50%;border:1px solid var(--line)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,4.6vw,3.2rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 10px}
+.role{font-size:1.1rem;color:var(--muted);margin:0 0 16px}
+.pitch{font-family:var(--serif);font-size:1.22rem;line-height:1.55;max-width:62ch;margin:0 0 20px}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-block;padding:8px 16px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:500;font-size:.93rem}
+.btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn.main{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .btn.main{color:#08161a}
+.btn.main:hover{color:#fff;opacity:.9}
+:root[data-theme="dark"] .btn.main:hover{color:#08161a}
+
+/* sections */
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:600;font-size:1.9rem;letter-spacing:-.01em;margin:0 0 6px}
+.lead{color:var(--muted);margin:0 0 28px;max-width:64ch}
+
+/* thèse */
+.thesis{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:26px 28px}
+.thesis h3{font-family:var(--serif);font-size:1.4rem;line-height:1.3;margin:0 0 10px}
+.thesis p{margin:0 0 12px;max-width:72ch}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:.93rem}
+.meta dt{font-weight:600;margin-bottom:2px}
+.meta dd{margin:0;color:var(--muted)}
+
+/* axes */
+.axes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:28px}
+.axe{padding:4px 0 0}
+.axe h3{font-family:var(--serif);font-size:1.2rem;margin:0 0 6px}
+.axe p{margin:0 0 10px;color:var(--muted);font-size:.96rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tags li{font-size:.8rem;padding:2px 10px;border-radius:99px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+
+/* publications */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.filters button{font:inherit;font-size:.9rem;font-weight:500;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .filters button[aria-pressed="true"]{color:#08161a}
+.pubs{list-style:none;margin:0;padding:0}
+.pub{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.pub:first-child{padding-top:0}
+.pub[hidden]{display:none}
+.year{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--accent);line-height:1.2}
+.pub h3{font-family:var(--serif);font-size:1.18rem;line-height:1.35;margin:0 0 4px}
+.venue{color:var(--muted);font-size:.93rem;margin:0 0 8px}
+.venue i{font-style:italic}
+.pub .tags{margin-bottom:8px}
+.pub-links{display:flex;gap:14px;font-size:.9rem;font-weight:500}
+.kind{font-size:.78rem;border:1px solid var(--line);border-radius:6px;padding:1px 8px;color:var(--muted);margin-left:6px;vertical-align:middle;font-family:var(--sans);font-weight:500}
+
+/* parcours */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 22px 16px}
+.tl li::before{content:"";position:absolute;left:-25px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.tl time{font-size:.85rem;color:var(--accent);font-weight:600}
+.tl h4{margin:2px 0 0;font-size:1rem}
+.tl p{margin:2px 0 0;color:var(--muted);font-size:.93rem}
+.tl .tag-major{display:inline-block;margin-left:6px;font-size:.75rem;background:var(--accent-soft);color:var(--accent);border-radius:99px;padding:0 8px;font-weight:600}
+h3.sub{font-family:var(--serif);font-size:1.3rem;margin:0 0 16px}
+
+/* compétences */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.skills h3{font-size:.95rem;margin:0 0 10px}
+.tags.big li{font-size:.88rem;padding:4px 12px}
+
+footer{padding:32px 0 60px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.9rem}
+footer .links{justify-content:center;margin-bottom:14px}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;text-align:left;padding-top:36px}
+  .hero img{width:130px;height:130px}
+  .two{grid-template-columns:1fr;gap:12px}
+  .pub{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container-fluid px-lg-4">
-      <a class="navbar-brand" href="#top"><i class="fas fa-user-graduate me-2"></i>Stefana Tsilefa</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Expériences</a></li>
-          <li class="nav-item"><a class="nav-link" href="#formation">Formation</a></li>
-          <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
-          <li class="nav-item"><a class="nav-link" href="#langues">Langues</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <main class="page-shell container" id="top">
-    <section class="hero">
-      <div class="hero-content">
-        <div class="row g-4 align-items-center">
-          <div class="col-lg-4">
-            <div class="profile-wrap">
-              <img src="profile.jpg" alt="Photo de profil de Stefana Fandresena Tabera Tsilefa" class="profile-pic">
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="eyebrow"><i class="fas fa-microscope"></i> Profil académique</div>
-            <h1>Tabera-Tsilefa Stefana Fandresena</h1>
-            <p class="subtitle">Doctorant en mathématiques appliquées, modélisation stochastique et apprentissage automatique</p>
-            <div class="hero-badge"><i class="fas fa-award"></i> Ambassadeur du CIMPA (Centre International de Mathématiques Pures et Appliquées)</div>
-            <p>
-              Je suis actuellement <strong>doctorant en mathématiques</strong> au sein du <strong>Laboratoire de Mathématiques et Applications de Poitiers</strong> et <strong> du département mathématiques de l'ENS Fianarantsoa</strong>,
-              dans le cadre d’une collaboration entre l’<strong>Université de Poitiers</strong> et l’<strong>Université de Fianarantsoa</strong>.
-              Mon sujet porte sur le <strong>deep learning pour la résolution et l’estimation paramétrique des équations différentielles stochastiques dirigées par des processus α-stables</strong>,
-              ainsi que sur l’<strong>existence des solutions périodiques et ses extensions</strong>. Mon parcours associe recherche mathématique,
-              enseignement supérieur et projets appliqués en analyse statistique.
-            </p>
-            
-            <div class="info-grid">
-              <a class="info-chip" href="mailto:tsilefastefana@gmail.com"><i class="fas fa-envelope"></i><span>tsilefastefana@gmail.com</span></a>
-              <a class="info-chip" href="mailto:stefana.tsilefa@univ-fianarantsoa.mg"><i class="fas fa-building-columns"></i><span>stefana.tsilefa@univ-fianarantsoa.mg</span></a>
-              <a class="info-chip" href="tel:+261347050361"><i class="fas fa-phone"></i><span>+261 34 70 50 361</span></a>
-              <a class="info-chip" href="tel:+33751377692"><i class="fas fa-phone"></i><span>+33 75 13 77 692</span></a>
-              <div class="info-chip"><i class="fas fa-location-dot"></i><span>Lot AV-115B Talatamaty, Fianarantsoa</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="layout">
+<nav>
+  <div class="wrap">
+    <b>Stefana Tabera-Tsilefa</b>
+    <ul>
+      <li><a href="#recherche">Recherche</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme" type="button" aria-label="Changer de thème">Mode sombre</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<header class="hero">
+  <img src="profile.jpg" alt="Portrait de Stefana Fandresena Tabera-Tsilefa">
+  <div>
+    <h1>Stefana Fandresena Tabera-Tsilefa</h1>
+    <p class="role">Doctorant en mathématiques · Université de Poitiers et Université de Fianarantsoa · Ambassadeur du CIMPA</p>
+    <p class="pitch">Je travaille sur la théorie des équations différentielles stochastiques dirigées par des processus α-stables, avec des applications aux processus de diffusion et aux modèles génératifs. Je modélise aussi des phénomènes en sciences du vivant.</p>
+    <div class="links">
+      <a class="btn main" href="#publications">Lire mes publications</a>
+      <a class="btn" href="https://scholar.google.com/citations?user=mdRZ-0EAAAAJ&hl=fr" target="_blank" rel="noopener">Google Scholar</a>
+      <a class="btn" href="https://github.com/jlingz14" target="_blank" rel="noopener">Code sur GitHub</a>
+      <!-- Ajoutez ici : <a class="btn" href="cv.pdf">CV (PDF)</a> -->
+    </div>
+  </div>
+</header>
+
+<!-- RECHERCHE -->
+<section id="recherche">
+  <h2>Recherche</h2>
+  <p class="lead">Ma thèse et mes travaux antérieurs portent sur la modélisation stochastique et ses applications.</p>
+
+  <div class="thesis">
+    <h3>Deep learning pour la résolution et l’estimation paramétrique des équations différentielles stochastiques dirigées par des processus α-stables</h3>
+    <p>Les processus α-stables décrivent des phénomènes avec des sauts et des queues lourdes, que le mouvement brownien ne capture pas. Ma thèse cherche à résoudre ces équations et à estimer leurs paramètres par apprentissage profond, et étudie l’existence de solutions périodiques et leurs extensions.</p>
+    <!-- Ajoutez 2 à 3 phrases sur vos résultats ou votre méthode principale -->
+    <dl class="meta">
+      <div><dt>Encadrement</dt><dd>Angelo Raherinirina (Fianarantsoa), Solym Manou-Abi (Poitiers), William Dimbour (Guyane)</dd></div>
+      <div><dt>Depuis</dt><dd>Janvier 2024, LMA Poitiers et ENS Fianarantsoa</dd></div>
+      <div><dt>Financement</dt><dd>Campus France Excellence PhD, CIMPA Ambassador Program, IRN AFRIMaths CNRS</dd></div>
+    </dl>
+  </div>
+
+  <div class="axes">
+    <article class="axe">
+      <h3>Équations différentielles stochastiques α-stables</h3>
+      <p>Existence de solutions, solutions périodiques, approximation numérique, estimation des paramètres par réseaux de neurones.</p>
+      <ul class="tags"><li>EDS</li><li>Processus α-stables</li><li>Deep learning</li></ul>
+    </article>
+    <article class="axe">
+      <h3>Épidémiologie stochastique et dépendance spatiale</h3>
+      <p>Modèles compartimentaux stochastiques, matrices de Markov spatiales, inférence bayésienne, modèles semi-markoviens appliqués à la COVID-19 à Madagascar.</p>
+      <ul class="tags"><li>Semi-Markov</li><li>Inférence bayésienne</li><li>COVID-19</li></ul>
+    </article>
+    <article class="axe">
+      <h3>Modélisation de l’environnement</h3>
+      <p>Modélisation stochastique du remplissage du delta de la Betsiboka (stage IRD, projet DIDEM).</p>
+      <ul class="tags"><li>Processus stochastiques</li><li>Delta de la Betsiboka</li></ul>
+    </article>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <h2>Publications</h2>
+  <p class="lead">Articles de revue et actes de conférence, du plus récent au plus ancien.</p>
+
+  <div class="filters" role="group" aria-label="Filtrer les publications">
+    <button type="button" data-f="all" aria-pressed="true">Toutes</button>
+    <button type="button" data-f="epid" aria-pressed="false">Épidémiologie</button>
+    <button type="button" data-f="stoch" aria-pressed="false">Modèles stochastiques</button>
+    <button type="button" data-f="journal" aria-pressed="false">Revues</button>
+    <button type="button" data-f="conf" aria-pressed="false">Conférences</button>
+  </div>
+
+  <ol class="pubs">
+    <li class="pub" data-t="epid stoch journal">
+      <div class="year">2025</div>
       <div>
-        
-        <section id="publications" class="section-card">
-          <h2><i class="fas fa-book"></i>Publications</h2>
-          <div class="publication-list">
-            <article class="publication-item">
-              <div class="publication-year">2025</div>
-              <div class="publication-title">Bayesian inference of a spatially dependent semi-markovian model with application to Madagascar COVID-19 data</div>
-              <p class="publication-source">PLOS ONE</p>
-              <a class="publication-link" href="https://doi.org/10.1371/journal.pone.0326264" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i> Voir la publication</a>
-            </article>
-
-            <article class="publication-item">
-              <div class="publication-year">2024</div>
-              <div class="publication-title">Spatial Markov matrices for measuring the spatial dependencies of an epidemiological spread: Case Covid-19 Madagascar</div>
-              <p class="publication-source">BMC Public Health</p>
-              <a class="publication-link" href="https://doi.org/10.1186/s12889-024-19654-9" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i> Voir la publication</a>
-            </article>
-
-            <article class="publication-item">
-              <div class="publication-year">2022</div>
-              <div class="publication-title">Numerical convergence of some stochastic compartmental models in epidemiology</div>
-              <p class="publication-source">African Conference on Research in Computer Science and Applied Mathematics</p>
-              <a class="publication-link" href="https://inria.hal.science/hal-03715840" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i> Voir la publication</a>
-            </article>
-
-            <article class="publication-item">
-              <div class="publication-year">2025</div>
-              <div class="publication-title">Modeling and analysis of COVID-19 patients hospitalization dynamic reliability by a semi-markovian model</div>
-              <p class="publication-source">African Conference on Research in Computer Science and Applied Mathematics · Springer Nature Switzerland</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="experience" class="section-card">
-          <h2><i class="fas fa-briefcase"></i>Expériences professionnelles</h2>
-          <ul class="timeline">
-            <li class="timeline-item">
-              <div class="timeline-date">Depuis janvier 2026</div>
-              <div class="timeline-title">Ambassadeur du CIMPA</div>
-              <div class="timeline-subtitle">Centre International de Mathématiques Pures et Appliquées</div>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">Janvier 2025 - octobre 2026</div>
-              <div class="timeline-title">Responsable parcours Licence Mathématiques</div>
-              <div class="timeline-subtitle">ENS Fianarantsoa</div>
-              <p class="timeline-text">Gestion du programme pédagogique et encadrement du parcours.</p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">Depuis juin 2025</div>
-              <div class="timeline-title">Chargé de recherche</div>
-              <div class="timeline-subtitle">Projet CONNECTER-IA</div>
-              <p class="timeline-text">Analyse et traitement statistique des données d’enquête.</p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">Depuis octobre 2023</div>
-              <div class="timeline-title">Enseignant vacataire</div>
-              <div class="timeline-subtitle">École Normale Supérieure Fianarantsoa</div>
-              <p class="timeline-text">Cours assurés : Structures des données et algorithme 1 (L1), Probabilités (L2), Programmation scientifique (L3), Analyse fonctionnelle (M1).</p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">Depuis 2021</div>
-              <div class="timeline-title">Organisateur d’activités mathématiques périscolaires</div>
-              <div class="timeline-subtitle">Animath International</div>
-              <p class="timeline-text">Préparation des élèves aux Olympiades francophones et internationales de mathématiques à Madagascar.</p>
-            </li>
-          </ul>
-        </section>
-          
-        <section id="formation" class="section-card">
-          <h2><i class="fas fa-graduation-cap"></i>Formation</h2>
-          <ul class="timeline">
-            <li class="timeline-item">
-              <div class="timeline-date">Depuis janvier 2024</div>
-              <div class="timeline-title">Doctorat en Mathématiques</div>
-              <div class="timeline-subtitle">Université de Poitiers (France) & Université de Fianarantsoa (Madagascar)</div>
-              <p class="timeline-text">
-                Sujet : Deep Learning pour la résolution et l’estimation paramétrique des équations différentielles stochastiques dirigées par des processus α-stables,
-                et existence des solutions périodiques et ses extensions.<br>
-                Sous la direction de Angelo Raherinirina (Université de Fianarantsoa), Solym Manou-Abi (Université de Poitiers) et William Dimbour (Université de Guyane).<br>
-                Financement : Campus France-Excellence PhD scholarship + CIMPA Ambassador Program + IRN AFRIMaths CNRS.
-              </p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">Août 2024</div>
-              <div class="timeline-title">École de recherche CIMPA (Centre International de Mathématiques Pures et Appliquées) 2024</div>
-              <div class="timeline-subtitle">École Normale Supérieure du Burundi</div>
-              <p class="timeline-text">Thème : « Équations aux Dérivées Partielles - Modélisation - Simulations ».</p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">2022 - 2023</div>
-              <div class="timeline-title">Master Recherche en Didactique de Mathématiques et Applications <span class="badge-custom"><i class="fas fa-award"></i>Major de promotion</span></div>
-              <div class="timeline-subtitle">École Normale Supérieure, Université de Fianarantsoa</div>
-              <p class="timeline-text">
-                Spécialité : Probabilités appliquées. Sujet : Construction d’une dépendance spatiale dans des modèles stochastiques appliqués à la propagation épidémiologique.
-              </p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">Février - avril 2023</div>
-              <div class="timeline-title">Stage de Master 2 Recherche</div>
-              <div class="timeline-subtitle">Université de Mayotte</div>
-              <p class="timeline-text">Existence de solution et approximation numérique des équations différentielles stochastiques dirigées par des processus α-stables.</p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">Juillet - décembre 2022</div>
-              <div class="timeline-title">Stage de Master 2 Recherche</div>
-              <div class="timeline-subtitle">IRD / Projet DIDEM / Deltas Madagascar</div>
-              <p class="timeline-text">Modélisation stochastique du remplissage du delta de la Betsiboka (Nord-Ouest de Madagascar).</p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">Octobre 2022</div>
-              <div class="timeline-title">École de recherche CIMPA (Centre International de Mathématiques Pures et Appliquées) 2022</div>
-              <div class="timeline-subtitle">Université de Tunis El Manar, Tunisie</div>
-              <p class="timeline-text">Thème : « Vert numérique : biologie mathématique et écologie théorique ».</p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">Février 2022</div>
-              <div class="timeline-title">École de recherche CIMPA (Centre International de Mathématiques Pures et Appliquées) 2021</div>
-              <div class="timeline-subtitle">Université de Fianarantsoa, Madagascar</div>
-              <p class="timeline-text">Thème : « Probabilistic and Statistical Modeling with Applications in Epidemiology and Environment ».</p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">2020</div>
-              <div class="timeline-title">Master d’Aptitude Pédagogique en Mathématiques</div>
-              <div class="timeline-subtitle">École Normale Supérieure, Université de Fianarantsoa</div>
-              <p class="timeline-text">Sujet : Extension stochastique des modèles compartimentaux épidémiologiques avec application sur la propagation du Covid-19 à Madagascar.</p>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-date">2017</div>
-              <div class="timeline-title">Licence d’Aptitude Pédagogique en Mathématiques</div>
-              <div class="timeline-subtitle">École Normale Supérieure, Université de Fianarantsoa</div>
-            </li>
-          </ul>
-        </section>
-
-        
-        <section id="competences" class="section-card">
-          <h2><i class="fas fa-tools"></i>Compétences</h2>
-
-          <div class="skill-group">
-            <h3>Mathématiques</h3>
-            <div class="skill-row">
-              <div class="skill-meta"><span>Théorie des probabilités et applications</span><span>90%</span></div>
-              <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-meta"><span>Processus stochastiques et statistiques mathématiques</span><span>90%</span></div>
-              <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
-            </div>
-            <div class="skill-row mb-0">
-              <div class="skill-meta"><span>Analyses fonctionnelles</span><span>85%</span></div>
-              <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <h3>Techniques</h3>
-            <div class="skill-row">
-              <div class="skill-meta"><span>Apprentissage automatique</span><span>80%</span></div>
-              <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-meta"><span>Programmation scientifique</span><span>85%</span></div>
-              <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
-            </div>
-            <div class="skill-row mb-0">
-              <div class="skill-meta"><span>Analyse statistique des données</span><span>88%</span></div>
-              <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
-            </div>
-          </div>
-        </section>
-
-        <section id="langues" class="section-card">
-          <h2><i class="fas fa-language"></i>Langues</h2>
-          <div class="language-box mb-3">
-            <h5>Malagasy</h5>
-            <div class="skill-bar"><div class="skill-progress" data-width="100%"></div></div>
-            <div class="small-muted mt-2">Langue maternelle</div>
-          </div>
-          <div class="language-box mb-3">
-            <h5>Français</h5>
-            <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
-            <div class="small-muted mt-2">Courant</div>
-          </div>
-          <div class="language-box">
-            <h5>Anglais</h5>
-            <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
-            <div class="small-muted mt-2">Intermédiaire</div>
-          </div>
-        </section>
-
-        <footer>
-          <div class="socials">
-            <a href="mailto:tsilefastefana@gmail.com" title="Email personnel"><i class="fas fa-envelope"></i></a>
-            <a href="mailto:stefana.tsilefa@univ-fianarantsoa.mg" title="Email institutionnel"><i class="fas fa-building-columns"></i></a>
-            <a href="https://www.linkedin.com/in/stefana-tabera-tsilefa-5353b3213/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/jlingz14" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://scholar.google.com/citations?user=mdRZ-0EAAAAJ&hl=fr" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-          </div>
-          © 2026 Stefana Tabera Tsilefa · GitHub Pages · Dernière mise à jour : 16 avril 2026
-        </footer>
+        <h3>Bayesian inference of a spatially dependent semi-markovian model with application to Madagascar COVID-19 data</h3>
+        <p class="venue"><i>PLOS ONE</i><span class="kind">Revue</span></p>
+        <ul class="tags"><li>Inférence bayésienne</li><li>Semi-Markov</li><li>Dépendance spatiale</li></ul>
+        <div class="pub-links"><a href="https://doi.org/10.1371/journal.pone.0326264" target="_blank" rel="noopener">Article (DOI)</a></div>
       </div>
+    </li>
+    <li class="pub" data-t="epid stoch conf">
+      <div class="year">2025</div>
+      <div>
+        <h3>Modeling and analysis of COVID-19 patients hospitalization dynamic reliability by a semi-markovian model</h3>
+        <p class="venue"><i>African Conference on Research in Computer Science and Applied Mathematics</i>, Springer Nature Switzerland<span class="kind">Conférence</span></p>
+        <ul class="tags"><li>Fiabilité</li><li>Semi-Markov</li><li>Hospitalisation</li></ul>
+        <!-- Ajoutez le lien DOI Springer -->
+      </div>
+    </li>
+    <li class="pub" data-t="epid stoch journal">
+      <div class="year">2024</div>
+      <div>
+        <h3>Spatial Markov matrices for measuring the spatial dependencies of an epidemiological spread: Case Covid-19 Madagascar</h3>
+        <p class="venue"><i>BMC Public Health</i><span class="kind">Revue</span></p>
+        <ul class="tags"><li>Matrices de Markov spatiales</li><li>COVID-19</li></ul>
+        <div class="pub-links"><a href="https://doi.org/10.1186/s12889-024-19654-9" target="_blank" rel="noopener">Article (DOI)</a></div>
+      </div>
+    </li>
+    <li class="pub" data-t="epid stoch conf">
+      <div class="year">2022</div>
+      <div>
+        <h3>Numerical convergence of some stochastic compartmental models in epidemiology</h3>
+        <p class="venue"><i>African Conference on Research in Computer Science and Applied Mathematics</i><span class="kind">Conférence</span></p>
+        <ul class="tags"><li>Convergence numérique</li><li>Modèles compartimentaux</li></ul>
+        <div class="pub-links"><a href="https://inria.hal.science/hal-03715840" target="_blank" rel="noopener">HAL</a></div>
+      </div>
+    </li>
+  </ol>
+  <p class="lead" style="margin:18px 0 0">Liste complète et citations : <a href="https://scholar.google.com/citations?user=mdRZ-0EAAAAJ&hl=fr" target="_blank" rel="noopener">Google Scholar</a>.</p>
+</section>
+
+<!-- PARCOURS -->
+<section id="parcours">
+  <h2>Parcours</h2>
+  <p class="lead">Formation en probabilités appliquées, et enseignement à l’ENS Fianarantsoa.</p>
+  <div class="two">
+    <div>
+      <h3 class="sub">Formation</h3>
+      <ul class="tl">
+        <li><time>Depuis janv. 2024</time><h4>Doctorat en mathématiques</h4><p>Université de Poitiers et Université de Fianarantsoa</p></li>
+        <li><time>Août 2024</time><h4>École de recherche CIMPA</h4><p>ENS du Burundi, EDP, modélisation, simulations</p></li>
+        <li><time>2022 – 2023</time><h4>Master Recherche en Didactique des mathématiques et applications <span class="tag-major">Major de promotion</span></h4><p>ENS Fianarantsoa, spécialité probabilités appliquées</p></li>
+        <li><time>Fév. – avril 2023</time><h4>Stage de recherche M2</h4><p>Université de Mayotte, EDS α-stables : existence et approximation numérique</p></li>
+        <li><time>Juil. – déc. 2022</time><h4>Stage de recherche M2</h4><p>IRD, projet DIDEM, delta de la Betsiboka</p></li>
+        <li><time>Oct. 2022</time><h4>École de recherche CIMPA</h4><p>Tunis, biologie mathématique et écologie théorique</p></li>
+        <li><time>Fév. 2022</time><h4>École de recherche CIMPA</h4><p>Fianarantsoa, modélisation probabiliste et statistique, épidémiologie et environnement</p></li>
+        <li><time>2020</time><h4>Master d’aptitude pédagogique en mathématiques</h4><p>ENS Fianarantsoa</p></li>
+        <li><time>2017</time><h4>Licence d’aptitude pédagogique en mathématiques</h4><p>ENS Fianarantsoa</p></li>
+      </ul>
     </div>
-  </main>
+    <div>
+      <h3 class="sub">Responsabilités et enseignement</h3>
+      <ul class="tl">
+        <li><time>Depuis janv. 2026</time><h4>Ambassadeur du CIMPA</h4><p>Centre International de Mathématiques Pures et Appliquées</p></li>
+        <li><time>Depuis juin 2025</time><h4>Chargé de recherche, projet CONNECTER-IA</h4><p>Analyse et traitement statistique des données d’enquête</p></li>
+        <li><time>Janv. 2025 – oct. 2026</time><h4>Responsable du parcours Licence Mathématiques</h4><p>ENS Fianarantsoa</p></li>
+        <li><time>Depuis oct. 2023</time><h4>Enseignant vacataire, ENS Fianarantsoa</h4><p>Structures de données et algorithmique (L1), probabilités (L2), programmation scientifique (L3), analyse fonctionnelle (M1)</p></li>
+        <li><time>Depuis 2021</time><h4>Animath International</h4><p>Préparation des élèves aux Olympiades de mathématiques à Madagascar</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <button class="theme-switch" aria-label="Changer le thème">
-    <i class="fas fa-moon"></i>
-  </button>
+<!-- COMPÉTENCES -->
+<section id="competences">
+  <h2>Compétences</h2>
+  <p class="lead">Outils mathématiques et techniques que j’utilise dans mes travaux.</p>
+  <div class="skills">
+    <div><h3>Mathématiques</h3><ul class="tags big"><li>Probabilités</li><li>Processus stochastiques</li><li>Statistique mathématique</li><li>Analyse fonctionnelle</li></ul></div>
+    <div><h3>Méthodes numériques</h3><ul class="tags big"><li>Apprentissage automatique</li><li>Deep learning</li><li>Programmation scientifique</li><li>Analyse statistique de données</li></ul></div>
+    <!-- Précisez vos outils : Python, PyTorch, R, LaTeX, etc. -->
+    <div><h3>Langues</h3><ul class="tags big"><li>Malagasy (langue maternelle)</li><li>Français (courant)</li><li>Anglais (intermédiaire)</li></ul></div>
+  </div>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const bars = document.querySelectorAll('.skill-progress');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.width = entry.target.getAttribute('data-width');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.4 });
+</main>
 
-      bars.forEach(bar => observer.observe(bar));
+<footer id="contact">
+  <div class="wrap">
+    <div class="links">
+      <a class="btn" href="mailto:stefana.tsilefa@univ-fianarantsoa.mg">stefana.tsilefa@univ-fianarantsoa.mg</a>
+      <a class="btn" href="mailto:tsilefastefana@gmail.com">tsilefastefana@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/stefana-tabera-tsilefa-5353b3213/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/jlingz14" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    LMA Poitiers · ENS Fianarantsoa · © 2026 Stefana Tabera-Tsilefa
+  </div>
+</footer>
 
-      const themeSwitch = document.querySelector('.theme-switch');
-      themeSwitch.addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        themeSwitch.innerHTML = document.body.classList.contains('dark-mode')
-          ? '<i class="fas fa-sun"></i>'
-          : '<i class="fas fa-moon"></i>';
-      });
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  var dark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+  function apply(d){root.setAttribute('data-theme',d?'dark':'light');btn.textContent=d?'Mode clair':'Mode sombre'}
+  apply(dark);
+  btn.addEventListener('click',function(){dark=!dark;apply(dark)});
 
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
+  var fb=document.querySelectorAll('.filters button'), pubs=document.querySelectorAll('.pub');
+  fb.forEach(function(b){b.addEventListener('click',function(){
+    fb.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    var f=b.dataset.f;
+    pubs.forEach(function(p){p.hidden=!(f==='all'||p.dataset.t.split(' ').indexOf(f)>-1)});
+  })});
 
-      const setActiveLink = () => {
-        let current = 'formation';
-        sections.forEach(section => {
-          const top = section.offsetTop;
-          if (window.scrollY >= top - 120) {
-            current = section.getAttribute('id');
-          }
-        });
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-        });
-      };
-
-      window.addEventListener('scroll', setActiveLink);
-      setActiveLink();
-
-      const collapse = document.querySelector('.navbar-collapse');
-      const toggler = document.querySelector('.navbar-toggler');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-          const target = document.querySelector(link.getAttribute('href'));
-          if (target) {
-            e.preventDefault();
-            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-            if (collapse.classList.contains('show')) toggler.click();
-          }
-        });
-      });
-    });
-  </script>
+  var links=document.querySelectorAll('nav li a'), secs=document.querySelectorAll('main section');
+  function spy(){var cur='';secs.forEach(function(s){if(window.scrollY>=s.offsetTop-120)cur=s.id});
+    links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+cur)})}
+  window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+</script>
 </body>
 </html>
