@@ -87,6 +87,15 @@ h2{font-family:var(--serif);font-weight:600;font-size:1.9rem;letter-spacing:-.01
 .pub-links{display:flex;gap:14px;font-size:.9rem;font-weight:500}
 .kind{font-size:.78rem;border:1px solid var(--line);border-radius:6px;padding:1px 8px;color:var(--muted);margin-left:6px;vertical-align:middle;font-family:var(--sans);font-weight:500}
 
+.talks{list-style:none;margin:0;padding:0}
+.talk{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.talk:first-child{padding-top:0}
+.talk h3{font-family:var(--serif);font-size:1.18rem;line-height:1.35;margin:0 0 4px}
+.talk .venue{margin:0 0 6px}
+.talk .when{color:var(--muted);font-size:.93rem;margin:0 0 8px}
+.kind.soon{border-color:var(--accent);color:var(--accent)}
+@media (max-width:760px){.talk{grid-template-columns:1fr;gap:4px}}
+
 /* parcours */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--line)}
@@ -123,6 +132,7 @@ footer .links{justify-content:center;margin-bottom:14px}
     <ul>
       <li><a href="#recherche">Recherche</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#communications">Communications</a></li>
       <li><a href="#parcours">Parcours</a></li>
       <li><a href="#competences">Compétences</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -235,6 +245,44 @@ footer .links{justify-content:center;margin-bottom:14px}
     </li>
   </ol>
   <p class="lead" style="margin:18px 0 0">Liste complète et citations : <a href="https://scholar.google.com/citations?user=mdRZ-0EAAAAJ&hl=fr" target="_blank" rel="noopener">Google Scholar</a>.</p>
+</section>
+
+<!-- COMMUNICATIONS -->
+<section id="communications">
+  <h2>Communications</h2>
+  <p class="lead">Exposés dans des congrès et conférences, du plus récent au plus ancien.</p>
+  <ol class="talks">
+    <li class="talk">
+      <div class="year">2026</div>
+      <div>
+        <h3>Score-Based Generative Modeling with Stable-driven Stochastic differential equation</h3>
+        <p class="venue"><i>Forum des jeunes mathématiciennes et mathématiciens 2026</i></p>
+        <p class="when">Décembre 2026, Nantes, France</p>
+        <ul class="tags"><li>Modèles génératifs</li><li>Score-based</li><li>EDS α-stables</li></ul>
+        <div class="pub-links"><a href="https://fjmm-26.sciencesconf.org/" target="_blank" rel="noopener">Page de l’événement</a></div>
+      </div>
+    </li>
+    <li class="talk">
+      <div class="year">2026</div>
+      <div>
+        <h3>Physics-informed neural networks for Stable-Driven Stochastic Differential Equations</h3>
+        <p class="venue"><i>International Congress on Statistics, Stochastic Analysis, and Data Science</i></p>
+        <p class="when">Juillet 2026, Oujda, Maroc</p>
+        <ul class="tags"><li>PINN</li><li>Deep learning</li><li>EDS α-stables</li></ul>
+        <div class="pub-links"><a href="https://ssmds26.ump.ma/" target="_blank" rel="noopener">Page de l’événement</a></div>
+      </div>
+    </li>
+    <li class="talk">
+      <div class="year">2022</div>
+      <div>
+        <h3>Numerical convergence of some stochastic compartmental models in epidemiology</h3>
+        <p class="venue"><i>African Conference on Research in Computer Science and Applied Mathematics (CARI)</i></p>
+        <p class="when">Octobre 2022, Hammamet, Tunisie</p>
+        <ul class="tags"><li>Convergence numérique</li><li>Modèles compartimentaux</li></ul>
+        <div class="pub-links"><a href="https://inria.hal.science/CARI2022" target="_blank" rel="noopener">Page de l’événement</a></div>
+      </div>
+    </li>
+  </ol>
 </section>
 
 <!-- PARCOURS -->
